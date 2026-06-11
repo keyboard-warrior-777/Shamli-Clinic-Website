@@ -66,9 +66,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=optional">
     <link
-        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=optional"
         rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Font Awesome -->
@@ -91,7 +91,7 @@
             --white: #FFFFFF;
             --off-white: #F8F9FA;
             --light-gray: #E9ECEF;
-            --medium-gray: #6C757D;
+            --medium-gray: #595959;
             --dark-gray: #343A40;
             --text-dark: #212529;
             --font-primary: 'DM Sans', system-ui, sans-serif;
@@ -405,6 +405,8 @@
                 padding: 250px 0 40px
             }
         }
+        /* CLS: reserve space for FA icons before stylesheet loads */
+        .fas, .fab, .far { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em }
     </style>
     <!-- Full stylesheet loads async for performance -->
     <link rel="stylesheet" href="css/style.css?v=1.4" media="print" onload="this.media='all'">
@@ -534,21 +536,21 @@
                                 <div class="highlight-item">
                                     <i class="fas fa-award"></i>
                                     <div>
-                                        <h4>20+ Years</h4>
+                                        <h3 class="highlight-title">20+ Years</h3>
                                         <p>Of dedicated service</p>
                                     </div>
                                 </div>
                                 <div class="highlight-item">
                                     <i class="fas fa-users"></i>
                                     <div>
-                                        <h4>1 Lakh+</h4>
+                                        <h3 class="highlight-title">1 Lakh+</h3>
                                         <p>Lives transformed</p>
                                     </div>
                                 </div>
                                 <div class="highlight-item">
                                     <i class="fas fa-heart"></i>
                                     <div>
-                                        <h4>100%</h4>
+                                        <h3 class="highlight-title">100%</h3>
                                         <p>Patient satisfaction focus</p>
                                     </div>
                                 </div>

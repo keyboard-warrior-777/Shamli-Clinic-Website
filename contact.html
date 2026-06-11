@@ -75,9 +75,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=optional">
     <link
-        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=optional"
         rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Font Awesome -->
@@ -102,7 +102,7 @@
             --white: #FFFFFF;
             --off-white: #F8F9FA;
             --light-gray: #E9ECEF;
-            --medium-gray: #6C757D;
+            --medium-gray: #595959;
             --dark-gray: #343A40;
             --text-dark: #212529;
             --font-primary: 'DM Sans', system-ui, sans-serif;
@@ -416,6 +416,8 @@
                 padding: 250px 0 40px
             }
         }
+        /* CLS: reserve space for FA icons before stylesheet loads */
+        .fas, .fab, .far { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em }
     </style>
     <!-- Full stylesheet loads async for performance -->
     <link rel="stylesheet" href="css/style.css?v=1.4" media="print" onload="this.media='all'">
@@ -522,7 +524,7 @@
                             <div class="contact-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <h3>Visit Us</h3>
+                            <h2 class="contact-card-title">Visit Us</h2>
                             <p>Gali No.3, Teacher's Colony<br>
                                 Karnal Road, Shamli &ndash; 247776<br>
                                 Uttar Pradesh, India</p>
@@ -535,7 +537,7 @@
                             <div class="contact-icon">
                                 <i class="fas fa-phone"></i>
                             </div>
-                            <h3>Call Us</h3>
+                            <h2 class="contact-card-title">Call Us</h2>
                             <p><a href="tel:+916399130973">+91 6399130973</a><br>
                                 <a href="tel:+918171416965">+91 8171416965</a>
                             </p>
@@ -546,7 +548,7 @@
                             <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <h3>Email Us</h3>
+                            <h2 class="contact-card-title">Email Us</h2>
                             <p><a
                                     href="mailto:physiotherapyshamli@gmail.com">physiotherapyshamli@gmail.com</a>
                             </p>
@@ -557,7 +559,7 @@
                             <div class="contact-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
-                            <h3>Opening Hours</h3>
+                            <h2 class="contact-card-title">Opening Hours</h2>
                             <p><strong>Mon&ndash;Saturday</strong><br>
                                 9:00 AM - 6:00 PM<br><br>
                                 <strong>Sunday</strong><br>

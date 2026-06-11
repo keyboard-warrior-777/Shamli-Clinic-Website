@@ -20,7 +20,7 @@ Professional Medical Website Stylesheet
     --white: #FFFFFF;
     --off-white: #F8F9FA;
     --light-gray: #E9ECEF;
-    --medium-gray: #6C757D;
+    --medium-gray: #595959;
     --dark-gray: #343A40;
     --text-dark: #212529;
 
@@ -2017,7 +2017,8 @@ p {
     color: var(--primary-color);
 }
 
-.highlight-item h4 {
+.highlight-item h4,
+.highlight-item .highlight-title {
     font-size: 1.5rem;
     margin-bottom: 0.25rem;
 }
@@ -2811,8 +2812,10 @@ p {
     margin: 0 auto 1.5rem;
 }
 
-.contact-card h3 {
+.contact-card h3,
+.contact-card .contact-card-title {
     margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
 .contact-card p {
@@ -5669,4 +5672,41 @@ p {
         font-size: 0.95rem;
         z-index: 1100;
     }
+}
+
+/* ============================================================
+   Accessibility: Touch Target Sizing (WCAG 2.5.8 — min 48×48px)
+   Ensures all interactive elements meet minimum size on mobile.
+   ============================================================ */
+@media (max-width: 768px) {
+    .social-links a,
+    .footer-social a {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .contact-link,
+    .breadcrumb a,
+    .nav-menu a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .slideshow-arrow {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* ============================================================
+   CLS Prevention: Font Awesome Icon Space Reservation
+   Reserve space for FA icons so text doesn't reflow when FA loads async.
+   ============================================================ */
+.fas, .fab, .far {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    vertical-align: -0.125em;
 }
