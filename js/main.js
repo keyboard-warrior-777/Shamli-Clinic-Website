@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled  = true;
 
-            fetch('/', {
+            fetch(window.location.pathname, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(new FormData(appointmentForm)).toString()
