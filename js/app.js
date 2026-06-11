@@ -937,7 +937,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="lightbox-content">
             <button class="lightbox-close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
             <button class="lightbox-nav prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-            <img src="" alt="Enlarged view">
+            <img src="" alt="Enlarged view" width="1200" height="800">
             <button class="lightbox-nav next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
             <div class="lightbox-counter"></div>
         </div>

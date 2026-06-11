@@ -345,7 +345,7 @@
             display: block;
             font-size: .75rem;
             font-weight: 500;
-            color: var(--secondary-color);
+            color: #996B2F;
             letter-spacing: 1px
         }
 
@@ -414,6 +414,17 @@
             display: flex;
             align-items: center;
             justify-content: center
+        }
+
+        /* CLS: reserve slideshow space before full CSS loads */
+        .clinic-slideshow {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 4/3;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #1F4D43
         }
 
         .hero-logo-section {
@@ -888,7 +899,7 @@
                             <div class="testimonial-author">
                                 <div class="author-avatar author-avatar-initials avatar-green">RS</div>
                                 <div class="author-info">
-                                    <h4>Rahul S.</h4>
+                                    <p class="testimonial-name">Rahul S.</p>
                                     <span>Back Pain Recovery</span>
                                     <span class="testimonial-source"><i class="fab fa-google"></i> Google Review &middot; Mar 2025</span>
                                 </div>
@@ -906,7 +917,7 @@
                             <div class="testimonial-author">
                                 <div class="author-avatar author-avatar-initials avatar-blue">PG</div>
                                 <div class="author-info">
-                                    <h4>Priya G.</h4>
+                                    <p class="testimonial-name">Priya G.</p>
                                     <span>Frozen Shoulder Treatment</span>
                                     <span class="testimonial-source"><i class="fab fa-google"></i> Google Review &middot; Jan 2025</span>
                                 </div>
@@ -924,7 +935,7 @@
                             <div class="testimonial-author">
                                 <div class="author-avatar author-avatar-initials avatar-orange">VS</div>
                                 <div class="author-info">
-                                    <h4>Vikram S.</h4>
+                                    <p class="testimonial-name">Vikram S.</p>
                                     <span>Sports Injury Recovery</span>
                                     <span class="testimonial-source"><i class="fab fa-google"></i> Google Review &middot; Nov 2024</span>
                                 </div>
@@ -942,7 +953,7 @@
                             <div class="testimonial-author">
                                 <div class="author-avatar author-avatar-initials avatar-purple">AK</div>
                                 <div class="author-info">
-                                    <h4>Amit K.</h4>
+                                    <p class="testimonial-name">Amit K.</p>
                                     <span>Sciatica Treatment</span>
                                     <span class="testimonial-source"><i class="fab fa-google"></i> Google Review &middot; Feb 2025</span>
                                 </div>
@@ -960,7 +971,7 @@
                             <div class="testimonial-author">
                                 <div class="author-avatar author-avatar-initials avatar-teal">SK</div>
                                 <div class="author-info">
-                                    <h4>Suresh K.</h4>
+                                    <p class="testimonial-name">Suresh K.</p>
                                     <span>Disc Bulge Recovery</span>
                                     <span class="testimonial-source"><i class="fab fa-google"></i> Google Review &middot; Dec 2024</span>
                                 </div>
@@ -978,7 +989,7 @@
                             <div class="testimonial-author">
                                 <div class="author-avatar author-avatar-initials avatar-red">NJ</div>
                                 <div class="author-info">
-                                    <h4>Neha J.</h4>
+                                    <p class="testimonial-name">Neha J.</p>
                                     <span>Neck Pain & Home Care</span>
                                     <span class="testimonial-source"><i class="fab fa-google"></i> Google Review &middot; Apr 2025</span>
                                 </div>
@@ -996,7 +1007,7 @@
                             <div class="testimonial-author">
                                 <div class="author-avatar author-avatar-initials avatar-indigo">RP</div>
                                 <div class="author-info">
-                                    <h4>Rajendra P.</h4>
+                                    <p class="testimonial-name">Rajendra P.</p>
                                     <span>Post-Surgery Rehabilitation</span>
                                     <span class="testimonial-source"><i class="fab fa-google"></i> Google Review &middot; May 2025</span>
                                 </div>
