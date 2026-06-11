@@ -3,7 +3,8 @@
 
 [build]
   publish = "."
-  # No build command needed — static site, no build step
+  # Auto-minify CSS and JS on every Netlify deploy (saves ~11 KiB)
+  command = "npx clean-css-cli@5 -o css/style.css css/style.css && npx terser js/app.js -o js/app.js --compress --mangle && npx terser js/main.js -o js/main.js --compress --mangle"
 
 # Force HTTPS
 [[redirects]]
