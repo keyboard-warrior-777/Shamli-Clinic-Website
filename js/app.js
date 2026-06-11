@@ -739,8 +739,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }));
 
         function resizeCanvas() {
-            canvas.width = heroSection.offsetWidth;
-            canvas.height = heroSection.offsetHeight;
+            const rect = heroSection.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
         }
 
         function drawDots() {
@@ -769,7 +770,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         heroSection.addEventListener('mousemove', function (e) {
-            const rect = heroSection.getBoundingClientRect();
+            const rect = canvas.getBoundingClientRect();
             mouseX = e.clientX - rect.left;
             mouseY = e.clientY - rect.top;
             if (!animating) drawDots();
