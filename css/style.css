@@ -3473,22 +3473,32 @@ p {
 }
 
 .slideshow-dot {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 6px;
-    box-sizing: content-box;
+    padding: 0;
+    position: relative;
+}
+
+/* Accessible touch target via invisible pseudo-element */
+.slideshow-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
 }
 
 .slideshow-dot.active {
     background: var(--white);
-    width: 20px;
+    width: 16px;
     border-radius: 4px;
-    padding: 6px 8px;
 }
 
 /* Slideshow prev/next arrows */
