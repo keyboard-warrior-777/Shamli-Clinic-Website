@@ -4,7 +4,7 @@
 [build]
   publish = "."
   # Auto-minify CSS and JS on every Netlify deploy (saves ~11 KiB)
-  command = "npx clean-css-cli@5 -o css/style.css css/style.css && npx terser js/app.js -o js/app.js --compress --mangle && npx terser js/main.js -o js/main.js --compress --mangle"
+  command = "npx clean-css-cli@5 -o css/style.css css/style.css && npx terser js/app.js -o js/app.js --compress && npx terser js/main.js -o js/main.js --compress"
 
 # Force HTTPS
 [[redirects]]
@@ -57,6 +57,19 @@
   to = "/404.html"
   status = 404
   force = true
+
+# Explicitly allow static files that must be reachable by crawlers
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+  force = false
 
 # Custom 404 (must be last — catch-all)
 [[redirects]]
