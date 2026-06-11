@@ -727,7 +727,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const DOT_COUNT = 12;
         let mouseX = null;
         let mouseY = null;
-        let animating = false;
+        let animationFrameId = null;
 
         // Each dot stores its current position and velocity
         const dots = Array.from({ length: DOT_COUNT }, (_, i) => ({
@@ -740,8 +740,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function resizeCanvas() {
             const rect = heroSection.getBoundingClientRect();
-            canvas.width = rect.width;
-            canvas.height = rect.height;
+            const width = Math.round(rect.width);
+            const height = Math.round(rect.height);
+            
+            // Only set canvas dimensions if they've actually changed to avoid layout recalculation / flicker
+            if (canvas.width !== width || canvas.height !== height) {
+                canvas.width = width;
+                canvas.height = height;
+            }
         }
 
         function drawDots() {
@@ -765,15 +771,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 targetY = dot.y;
             });
 
-            animating = true;
-            requestAnimationFrame(drawDots);
+            animationFrameId = requestAnimationFrame(drawDots);
+        }
+
+        function startAnimation() {
+            if (!animationFrameId) {
+                drawDots();
+            }
         }
 
         heroSection.addEventListener('mousemove', function (e) {
             const rect = canvas.getBoundingClientRect();
             mouseX = e.clientX - rect.left;
             mouseY = e.clientY - rect.top;
-            if (!animating) drawDots();
+            startAnimation();
         });
 
         heroSection.addEventListener('mouseleave', function () {
@@ -781,9 +792,34 @@ document.addEventListener('DOMContentLoaded', function () {
             mouseY = null;
         });
 
-        window.addEventListener('resize', resizeCanvas);
+        // Initialize ResizeObserver to catch any size changes (async CSS load, resize, layout shift)
+        if (window.ResizeObserver) {
+            const resizeObserver = new ResizeObserver(() => {
+                resizeCanvas();
+            });
+            resizeObserver.observe(heroSection);
+        } else {
+            window.addEventListener('resize', resizeCanvas);
+        }
+
+        // Additional fail-safes for loading and back-forward navigation
+        window.addEventListener('load', resizeCanvas);
+        
+        window.addEventListener('pageshow', function (e) {
+            resizeCanvas();
+            mouseX = null;
+            mouseY = null;
+            
+            // Re-initialize animation loop to ensure it's active
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+            startAnimation();
+        });
+
         resizeCanvas();
-        drawDots();
+        startAnimation();
     }
 
     // =====================================
