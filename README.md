@@ -3,7 +3,7 @@
 Welcome to the official repository for the **Shamli Physiotherapy Osteo Chiro Clinic** website. This is a high-performance, fully responsive, and SEO-optimized website built using modern web standards to provide patients with an exceptional digital experience.
 
 **Live Website:** [shamliphysiotherapy.com](https://shamliphysiotherapy.com)
-**Platform:** Hosted on Netlify
+**Platform:** Hosted on Netlify (auto-deploys from this GitHub repo)
 
 ---
 
@@ -20,12 +20,13 @@ Welcome to the official repository for the **Shamli Physiotherapy Osteo Chiro Cl
 - **Image Optimization:** All assets are encoded in modern WebP format for fast loading without quality loss.
 - **Lazy Loading:** Images and third-party resources (like YouTube videos and Google Maps) load on-demand as the user scrolls.
 - **Critical CSS Inlined:** Optimized critical rendering path for extremely fast initial page load.
-- **Asset Optimization:** Minified assets and caching policies managed automatically.
+- **Asset Optimization:** Caching policies managed automatically via `netlify.toml`.
 
 ### 🔍 SEO & Accessibility
-- **Search Engine Ready:** Descriptive meta tags, clean URL structure, XML sitemap, and `robots.txt` configuration.
+- **Search Engine Ready:** Descriptive meta tags, localized keywords (Shamli, physiotherapist, chiropractic), XML sitemap, and `robots.txt` configuration.
 - **Schema.org Structured Data:** JSON-LD schema integration (`MedicalClinic`, `FAQPage`, `BreadcrumbList`, and `MedicalProcedure`) to help search engines understand clinic details, hours, and services.
-- **Accessible (a11y):** Keyboard navigation support, ARIA attributes for form validation, reduced-motion media query support, and high-contrast styling.
+- **Accessible (a11y):** Keyboard navigation support, ARIA attributes for form validation, reduced-motion media query support, high-contrast styling, and WCAG-compliant color contrast ratios.
+- **Google Search Console:** Verified and indexed with sitemap submitted.
 
 ---
 
@@ -51,10 +52,13 @@ Welcome to the official repository for the **Shamli Physiotherapy Osteo Chiro Cl
 ├── thankyou.html       # Success page after form submission
 ├── 404.html            # Custom error page for invalid URLs
 ├── css/
-│   └── style.css       # Main stylesheet containing all custom design rules
+│   ├── style.css       # Main stylesheet (~117 KB)
+│   └── critical.css    # Critical above-the-fold CSS (~4 KB, inlined in pages)
 ├── js/
-│   └── app.js          # App logic, sliders, validation, and lightboxes
+│   ├── app.js          # App logic, sliders, validation, and lightboxes (~54 KB)
+│   └── main.js         # Mirror of app.js (must always be identical)
 ├── images/             # Optimized WebP assets, doctor portraits, and certificates
+├── docs/               # Documentation (blocked from public web access)
 ├── netlify.toml        # Netlify routing, redirects, and security headers config
 ├── sitemap.xml         # XML Sitemap for search engine indexing
 └── robots.txt          # Crawler directives
@@ -75,7 +79,18 @@ To test the website on your local machine:
 
 ---
 
+## 📊 Performance Scores (PageSpeed Insights — June 2026)
+
+| Metric | Desktop | Mobile |
+|--------|---------|--------|
+| Performance | 77–90 | 69–78 |
+| Accessibility | 96–100 | 96–100 |
+| Best Practices | 100 | 100 |
+| SEO | 100 | 100 |
+
+---
+
 ## 📄 License & Terms
 
-*Copyright © 2026 Shamli Physiotherapy Osteo Chiro Clinic. All rights reserved.*  
+*Copyright © 2026 Shamli Physiotherapy Osteo Chiro Clinic. All rights reserved.*
 The source code and website assets (images, logos, text content) are proprietary and are configured exclusively for the deployment of the Shamli Clinic website.
