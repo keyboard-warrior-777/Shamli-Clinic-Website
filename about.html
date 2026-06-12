@@ -405,6 +405,9 @@
                 padding: 250px 0 40px
             }
         }
+        /* Override FA font-display to swap (CDN default is block) */
+        @font-face { font-family: 'Font Awesome 6 Free'; font-display: swap; src: local('Font Awesome 6 Free') }
+        @font-face { font-family: 'Font Awesome 6 Brands'; font-display: swap; src: local('Font Awesome 6 Brands') }
         /* CLS: reserve space for FA icons before stylesheet loads */
         .fas, .fab, .far { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em }
     </style>
@@ -450,7 +453,7 @@
                         <div class="logo">
                             <a href="/">
                                 <img src="images/logo.webp" alt="Shamli Physiotherapy Logo" class="logo-img"
-                                    loading="eager" decoding="async" width="200" height="233">
+                                    loading="eager" decoding="async" width="100" height="117">
                                 <div>
                                     <span class="logo-text">Shamli Physiotherapy</span>
                                     <span class="logo-subtitle">Osteo &bull; Chiro &bull; Clinic</span>
@@ -564,20 +567,20 @@
                                             alt="Shamli Physiotherapy Clinic exterior view" loading="eager"
                                             fetchpriority="high" decoding="async" width="720" height="1280"></div>
                                     <div class="slideshow-slide"><img src="images/clinic3.webp"
-                                            alt="Shamli Physiotherapy Clinic interior view" loading="lazy" width="800"
-                                            height="1422"></div>
+                                            alt="Shamli Physiotherapy Clinic interior view" loading="lazy" width="750"
+                                            height="1333"></div>
                                     <div class="slideshow-slide"><img src="images/clinic4.webp"
-                                            alt="Waiting area at Shamli Physiotherapy Clinic" loading="lazy" width="800"
-                                            height="1422"></div>
+                                            alt="Waiting area at Shamli Physiotherapy Clinic" loading="lazy" width="750"
+                                            height="1333"></div>
                                     <div class="slideshow-slide"><img src="images/clinic5.webp"
                                             alt="Patient waiting area at Shamli Physiotherapy Clinic" loading="lazy"
-                                            width="800" height="1422"></div>
+                                            width="750" height="1333"></div>
                                     <div class="slideshow-slide"><img src="images/clinic6.webp"
                                             alt="Rehabilitation facility at Shamli Physiotherapy" loading="lazy"
-                                            width="800" height="1422"></div>
+                                            width="750" height="1333"></div>
                                     <div class="slideshow-slide"><img src="images/clinic7.webp"
                                             alt="Reception area at Shamli Physiotherapy Clinic" loading="lazy"
-                                            width="800" height="1422"></div>
+                                            width="700" height="1244"></div>
                                     <div class="slideshow-slide"><img src="images/parking.webp"
                                             alt="Spacious parking area at Shamli Physiotherapy Clinic" loading="lazy"
                                             width="700" height="1244"></div>
