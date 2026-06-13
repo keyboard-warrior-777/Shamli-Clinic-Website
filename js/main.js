@@ -604,7 +604,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!isMobile) {
         const tiltCards = document.querySelectorAll(
-            '.benefit-card, .service-card, .condition-card, .testimonial-card, .mv-card'
+            '.service-card, .condition-card, .testimonial-card, .mv-card'
         );
 
         tiltCards.forEach(card => {
