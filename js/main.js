@@ -677,37 +677,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // =====================================
-    // 3D Page Transition System
-    // =====================================
-    // Intercept internal link clicks for smooth 3D page transitions
-    const internalLinks = document.querySelectorAll(
-        'a[href^="/about"], a[href^="/services"], a[href^="/doctors"], a[href^="/contact"], a[href^="/privacy"], a[href="/"]'
-    );
-
-    internalLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-
-            // Skip if it has a hash fragment on the same page, or opens in new tab
-            if (!href || href.startsWith('#') || this.target === '_blank') return;
-            // Skip if it's the current page
-            if (href === window.location.pathname) return;
-            // Skip hash links to sections on same page
-            if (href.includes('#') && href.split('#')[0] === window.location.pathname) return;
-
-            e.preventDefault();
-
-            // Apply exit animation
-            document.body.classList.add('page-exit');
-
-            // Navigate after the exit animation completes
-            setTimeout(() => {
-                window.location.href = href;
-            }, 350);
-        });
-    });
-
-    // =====================================
     // Console Message
     // =====================================
     console.log('%c Shamli Physiotherapy Osteo Chiro Clinic ', 'background: #2C6B5F; color: white; font-size: 16px; padding: 10px;');
